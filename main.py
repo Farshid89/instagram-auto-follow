@@ -4,8 +4,9 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-USER_NAME = "pythondeveloper1989"
-PASS = "1611368"
+USER_NAME = "INSTAGRAM_USERNAME"
+PASS = "INSTAGRAM_PASSWORD"
+page_address = "https://www.instagram.com/natgeo/"
 
 service = Service("C:/Selenium Driver/chromedriver.exe")
 
@@ -46,7 +47,7 @@ class InstaFollower:
             time.sleep(1)
 
 
-insta_follower = InstaFollower("https://www.instagram.com/natgeo/")
+insta_follower = InstaFollower(page_address)
 insta_follower.login()
 insta_follower.find_followers()
 insta_follower.follow()
