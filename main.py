@@ -4,10 +4,9 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-USER_NAME = "INSTAGRAM_USERNAME"
-PASS = "INSTAGRAM_PASSWORD"
-page_address = "https://www.instagram.com/natgeo/"
-
+user_name = input("Enter Instagram user name: ")
+password = input("Enter Instagram password: ")
+page_address = input("Enter page's full address: ")
 service = Service("C:/Selenium Driver/chromedriver.exe")
 
 
@@ -24,9 +23,9 @@ class InstaFollower:
                                            '1]/section/nav/div[2]/div/div/div[3]/div/span/a[1]')
         sign_in.click()
         user_name = self.driver.find_element(By.NAME, "username")
-        user_name.send_keys(USER_NAME)
+        user_name.send_keys(user_name)
         password = self.driver.find_element(By.NAME, "password")
-        password.send_keys(PASS)
+        password.send_keys(password)
         password.send_keys(Keys.ENTER)
         time.sleep(2)
         not_now = self.driver.find_element(By.XPATH, '/html/body/div[1]/section/main/div/div/div/div/button')
